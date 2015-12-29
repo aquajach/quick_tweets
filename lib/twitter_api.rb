@@ -48,11 +48,13 @@ module TwitterAPI
 
       begin
         tweets = JSON.parse(resp.body)
+
         if tweets.present?
-          tweets.map{|raw_tweet| Tweet.new(raw_tweet)}
+          return tweets.map{|raw_tweet| Tweet.new(raw_tweet)}
         end
       rescue
         ::Rails.logger.error "Fetching timeline for #{screen_name} resulted in error: #{resp.body}"
+        return []
       end
     end
   end

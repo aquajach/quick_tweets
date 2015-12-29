@@ -3,7 +3,7 @@
     = text_field_tag :screen_name
     = submit_tag :go
 
-  - if @tweets
+  - if @tweets.present?
     - @tweets.each do |tweet|
       %table.tweet
         %tr
@@ -15,3 +15,5 @@
             = "#{distance_of_time_in_words_to_now(tweet.created_at)} ago"
             %p
               = text_with_mentions(tweet.text, tweet.user_mentions).html_safe
+  - elsif params[:screen_name]
+    = "#{params[:screen_name]} is protected or not a valid twitter username"
