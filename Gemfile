@@ -51,3 +51,7 @@ group :test do
   gem 'webmock', '~> 1.22.3'
 end
 
+group :production do
+  gem 'rack-wwwhisper', '~> 1.0'
+end
+

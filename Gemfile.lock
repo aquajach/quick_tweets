@@ -89,11 +89,16 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
+    net-http-persistent (2.9.4)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-wwwhisper (1.1.9)
+      addressable (~> 2.0)
+      net-http-persistent
+      rack (~> 1.0)
     rails (4.2.5)
       actionmailer (= 4.2.5)
       actionpack (= 4.2.5)
@@ -188,6 +193,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  rack-wwwhisper (~> 1.0)
   rails (= 4.2.5)
   rspec-rails (~> 3.4.0)
   sass-rails (~> 5.0)
