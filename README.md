@@ -13,6 +13,10 @@
   2. /statuses/user_timeline, to get the recents tweets in users timeline, check [the detail](https://github.com/aquajach/quick_tweets/blob/master/lib/twitter_api.rb#L35)
 
   Note: 1) is skipped if bearer token (that never expires) has been saved as a environment variable
+  
+* The timeline of a specific user is cached for 5 minutes in the app
+  
+* Images and other rich format in tweets are not supported yet, but @mention tag works  
 
 **b. Local environment setup**
 
