@@ -18,7 +18,7 @@ describe TwitterAPI do
       it 'gets the recent tweets' do
         expect(described_class).not_to receive(:refresh_bearer_token)
         ENV['TWITTER_BEARER_TOKEN'] = 'xyz'
-        stub_request(:get, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=abc').to_return(
+        stub_request(:get, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=abc&count=25').to_return(
             body: File.read(File.dirname(__FILE__) + '/../support/tweets_in_timeline.json')
         )
         expect(described_class.timeline('abc').count).to eql 2
@@ -29,7 +29,7 @@ describe TwitterAPI do
       it 'gets the recent tweets' do
         expect(described_class).to receive(:refresh_bearer_token)
         ENV['TWITTER_BEARER_TOKEN'] = nil
-        stub_request(:get, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=abc').to_return(
+        stub_request(:get, 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=abc&count=25').to_return(
             body: File.read(File.dirname(__FILE__) + '/../support/tweets_in_timeline.json')
         )
         expect(described_class.timeline('abc').count).to eql 2

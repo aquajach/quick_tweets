@@ -1,8 +1,9 @@
 class Tweet
-  attr_reader :text
+  attr_reader :text, :user_mentions
 
   def initialize(tweet_json)
     @text = tweet_json['text']
+    @user_mentions = tweet_json['entities']['user_mentions'].map{|mention| mention['screen_name']}
   end
 
   def self.in_timeline(screen_name)

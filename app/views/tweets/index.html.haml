@@ -5,4 +5,4 @@
 - if @tweets
   - @tweets.each do |tweet|
     %p
-      = tweet.text
+      = text_with_mentions(tweet.text, tweet.user_mentions).html_safe
