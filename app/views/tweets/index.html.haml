@@ -1,8 +1,17 @@
-= form_tag root_path, method: :get do
-  = text_field_tag :screen_name
-  = submit_tag :go
+.tweets-container
+  = form_tag root_path, method: :get do
+    = text_field_tag :screen_name
+    = submit_tag :go
 
-- if @tweets
-  - @tweets.each do |tweet|
-    %p
-      = text_with_mentions(tweet.text, tweet.user_mentions).html_safe
+  - if @tweets
+    - @tweets.each do |tweet|
+      %table.tweet
+        %tr
+          %td.user-avatar
+            = image_tag tweet.profile_thumbnail_url
+          %td.tweet-info
+            = tweet.user_name
+            = "@#{tweet.user_screen_name}"
+            = "#{distance_of_time_in_words_to_now(tweet.created_at)} ago"
+            %p
+              = text_with_mentions(tweet.text, tweet.user_mentions).html_safe

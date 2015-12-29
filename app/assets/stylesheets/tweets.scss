@@ -1,0 +1,23 @@
+body#tweets {
+  form {
+    padding-bottom: 30px;
+  }
+  .tweets-container {
+    width: 900px;
+    margin: auto;
+    table.tweet {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid gray;
+      padding: 10px;
+      margin-bottom: 30px;
+
+      td {
+        vertical-align: top;
+        &.user-avatar {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
