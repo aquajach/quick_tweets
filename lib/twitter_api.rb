@@ -27,7 +27,7 @@ module TwitterAPI
           ENV['TWITTER_BEARER_TOKEN'] = JSON.parse(resp.body)['access_token']
         end
       rescue
-        ::Rails.logger.error "Fetching bearer token resulted in error: #{resp.body}"
+        puts "Fetching bearer token resulted in error: #{resp.body}"
       end
     end
   end
@@ -53,7 +53,7 @@ module TwitterAPI
           return tweets.map{|raw_tweet| Tweet.new(raw_tweet)}
         end
       rescue
-        ::Rails.logger.error "Fetching timeline for #{screen_name} resulted in error: #{resp.body}"
+        puts "Fetching timeline for #{screen_name} resulted in error: #{resp.body}"
         return []
       end
     end
