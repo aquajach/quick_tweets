@@ -6,7 +6,8 @@ class Tweet
   end
 
   def self.in_timeline(screen_name)
-    TwitterAPI.timeline(screen_name)
+    Rails.cache.fetch("timeline/#{screen_name}", expires_in: 5.minutes) do
+      TwitterAPI.timeline(screen_name)
+    end
   end
-
 end

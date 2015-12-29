@@ -3,7 +3,6 @@ require 'base64'
 require 'uri'
 
 module TwitterAPI
-
   def self.refresh_bearer_token
     consumer_token = "#{::Rails.application.secrets.twitter_consumer_key}:#{::Rails.application.secrets.twitter_consumer_secret}"
     encoded_bearer_token = Base64.strict_encode64(consumer_token)
