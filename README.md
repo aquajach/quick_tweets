@@ -34,6 +34,7 @@
 ```heroku config:set TWITTER_CONSUMER_KEY=*your_twitter_consumer_key*```
 ```heroku config:set TWITTER_CONSUMER_SECRET=*your_twitter_consumer_secret*```
 3. ```git push heroku```
+4. Add wwwhisper add-on by following: [https://devcenter.heroku.com/articles/wwwhisper](https://devcenter.heroku.com/articles/wwwhisper)
 
 **d. Test/spec setup**
 
