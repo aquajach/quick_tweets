@@ -34,7 +34,7 @@ module TwitterAPI
   end
 
   def self.timeline(screen_name)
-    url = URI.parse("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{screen_name}")
+    url = URI.parse("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{screen_name}&count=25")
     https = Net::HTTP.new(url.host, 443)
     https.use_ssl = true
 
